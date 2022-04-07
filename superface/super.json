@@ -11,6 +11,9 @@
       "parameters": {
         "accessToken": "$DB_ACCESS_TOKEN"
       }
+    },
+    "mock": {
+      "file": "./grid/mock.provider.json"
     }
   },
   "profiles": {
@@ -19,11 +22,11 @@
       "providers": {
         "db-simulator": {
           "file": "./grid/get-account-balance.db-simulator.suma"
+        },
+        "mock": {
+          "file": "./grid/get-account-balance.mock.suma"
         }
-      },
-      "priority": [
-        "db-simulator"
-      ]
+      }
     }
   }
 }

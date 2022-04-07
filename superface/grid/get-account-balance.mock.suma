@@ -1,0 +1,17 @@
+profile = "get-account-balance@1.0"
+provider = "mock"
+
+map GetAccountBalance {
+    map result {
+        accounts = [
+            {
+                iban: 'DE10010000000000009318',
+                currentBalance: 100.95,
+                accountType: 'CURRENT_ACCOUNT',
+                bic: 'DEUTDEFFXXX',
+                currencyCode: 'EUR',
+                productDescription: 'Persönliches Konto'
+            }
+        ]
+    }
+}
