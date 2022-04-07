@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "db-simulator": {
+      "file": "./grid/db-simulator.provider.json",
+      "security": [
+        {
+          "id": "bearer_token",
+          "token": "$DB_ACCESS_TOKEN"
+        }
+      ],
+      "parameters": {
+        "accessToken": "$DB_ACCESS_TOKEN"
+      }
+    }
+  },
+  "profiles": {
+    "banking/get-account-balance": {
+      "file": "./grid/get-account-balance.supr",
+      "providers": {
+        "db-simulator": {
+          "file": "./grid/get-account-balance.db-simulator.suma"
+        }
+      },
+      "priority": [
+        "db-simulator"
+      ]
+    }
+  }
+}

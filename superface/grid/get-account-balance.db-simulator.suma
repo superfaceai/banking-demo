@@ -1,0 +1,34 @@
+profile = "get-account-balance@1.0"
+provider = "db-simulator"
+
+"""
+GetAccountBalance map
+"""
+map GetAccountBalance {
+    http GET "/banking/cashAccounts/v2" {
+        request "application/json" {
+            query {
+                iban = input.iban
+                currencyCode = input.currencyCode
+                accountTypeFilter = input.accountTypeFilter
+            }
+
+            headers {
+                "Authorization" = `Bearer ${parameters.accessToken}`
+            }
+        }
+
+        response 200 "application/json" {
+            map result {
+                accounts = body.accounts
+            }
+        }
+
+        response 401 "application/json" {
+            map error {
+                title = "Unauthorized"
+                description = body.message
+            }
+        }
+    }
+}

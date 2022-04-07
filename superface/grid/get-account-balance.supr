@@ -1,0 +1,84 @@
+name = "banking/get-account-balance"
+version = "0.1.0"
+
+"""
+GetAccountBalance usecase
+"""
+usecase GetAccountBalance safe {
+
+    input {
+        """
+        IBAN
+        IBAN representing an account of the current user.
+        """
+        iban string
+
+        """
+        Currency Code
+        ISO 4217 Alpha 3 currency code.
+        """
+        currencyCode string
+
+        """
+        Account Type Filter
+        Filter the result by account type (default ALL).
+        """
+        accountTypeFilter enum {
+            CURRENT_ACCOUNT
+            DEPOSIT_ACCOUNT
+            ALL
+        }
+
+        page string
+    }
+
+    result {
+        accounts! [Account]
+        nextPage string
+    }
+
+    error Error
+}
+
+model Account {
+    """
+    IBAN
+    International Bank Account Number of the account.
+    """
+    iban! string!
+
+    """
+    Currency Code
+    ISO 4217 Alpha 3 currency code.
+    """
+    currencyCode! string!
+
+    """
+    Current Account Balance
+    Booked balance in EUR.
+    """
+    currentBalance! number!
+
+    """
+    BIC
+    Business Identification Code of the account.
+    """
+    bic string
+
+    """
+    Account Type
+    Type of the cash account.
+    """
+    accountType string
+    
+    """
+    Description
+    Description of the product.
+    """
+    description string
+}
+
+model Error {
+  title! string
+  description! string
+}
