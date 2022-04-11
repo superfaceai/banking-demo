@@ -12,7 +12,6 @@ export function getAccountBalanceTest(providerName: string) {
                 .perform(undefined, { provider });
 
             expect(result.isOk()).toBe(true);
-            expect(result.unwrap()).toMatchSnapshot();
         });
     });
 }
