@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { SuperfaceClient } from "@superfaceai/one-sdk";
 
 export function getAccountBalanceTest(providerName: string) {
