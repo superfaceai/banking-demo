@@ -20,7 +20,7 @@ map GetAccountBalance {
 
         response 200 "application/json" {
             map result {
-                accounts = body.accounts
+                accounts = call MapAccounts(body = body)
             }
         }
 
@@ -31,4 +31,22 @@ map GetAccountBalance {
             }
         }
     }
+}
+
+"""
+Operation MapAccounts
+Returns array mapping accounts in received body
+"""
+operation MapAccounts {
+    accounts = args.body.accounts.map((account) => {
+        return {
+            iban: account.iban,
+            currentBalance: account.currentBalance,
+            accountType: account.accountType.replace('_ACCOUNT', ''),
+            bic: account.bic,
+            currencyCode: account.currencyCode,
+            description: account.productDescription
+        }
+    });
+    return accounts
 }

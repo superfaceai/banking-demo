@@ -5,12 +5,12 @@ Ok {
   "value": Object {
     "accounts": Array [
       Object {
-        "accountType": "CURRENT_ACCOUNT",
+        "accountType": "CURRENT",
         "bic": "DEUTDEFFXXX",
         "currencyCode": "EUR",
         "currentBalance": 100.95,
+        "description": "Persönliches Konto",
         "iban": "DE10010000000000009318",
-        "productDescription": "Persönliches Konto",
       },
     ],
   },
