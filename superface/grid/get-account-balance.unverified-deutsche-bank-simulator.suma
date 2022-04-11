@@ -1,4 +1,4 @@
-profile = "get-account-balance@1.0"
+profile = "banking/get-account-balance@1.0"
 provider = "unverified-deutsche-bank-simulator"
 
 """
