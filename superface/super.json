@@ -12,6 +12,18 @@
         "accessToken": "$DB_ACCESS_TOKEN"
       }
     },
+    "unverified-norisbank-simulator": {
+      "file": "./grid/unverified-norisbank-simulator.provider.json",
+      "security": [
+        {
+          "id": "bearer_token",
+          "token": "$NB_ACCESS_TOKEN"
+        }
+      ],
+      "parameters": {
+        "accessToken": "$NB_ACCESS_TOKEN"
+      }
+    },
     "mock": {
       "file": "./grid/mock.provider.json"
     }
@@ -22,6 +34,9 @@
       "providers": {
         "unverified-deutsche-bank-simulator": {
           "file": "./grid/get-account-balance.unverified-deutsche-bank-simulator.suma"
+        },
+        "unverified-norisbank-simulator": {
+          "file": "./grid/get-account-balance.unverified-norisbank-simulator.suma"
         },
         "mock": {
           "file": "./grid/get-account-balance.mock.suma"

@@ -1,0 +1,23 @@
+{
+  "name": "unverified-norisbank-simulator",
+  "services": [
+    {
+      "id": "default",
+      "baseUrl": "https://simulator-api.norisbank.de/gw/dbapi/"
+    }
+  ],
+  "defaultService": "default",
+  "securitySchemes": [
+    {
+      "id": "bearer_token",
+      "type": "http",
+      "scheme": "bearer"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "accessToken",
+      "description": "User-authorized access token"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chat/channels/unverified-norisbank-simulator GetAccountBalance performs correctly 1`] = `
+Ok {
+  "value": Object {
+    "accounts": Array [
+      Object {
+        "accountType": "CURRENT",
+        "bic": "DEUTDEFFXXX",
+        "currencyCode": "EUR",
+        "currentBalance": 1400.95,
+        "description": "Persönliches Konto",
+        "iban": "DE10010000000000009332",
+      },
+    ],
+  },
+}
+`;

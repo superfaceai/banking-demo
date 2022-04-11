@@ -1,12 +1,12 @@
 [
   {
-    "scope": "https://simulator-api.db.com:443",
+    "scope": "https://simulator-api.norisbank.de:443",
     "method": "GET",
     "path": "/gw/dbapi/banking/cashAccounts/v2",
     "body": "",
     "status": 200,
     "response": [
-      "1f8b0800000000000003458edd0a824010855f25e65a428920bd2b7f20020b511022621d575ad05dd91d2f447cad5ea0176bedc20ee7e27098f331139022d69e89770602cf01d534861304ae03ade8844d9e8d0c510d92ecc97d025131090144b1e7bad67ff93bef000ee0a0359774622d93c81780bbf5f72b241f7b5b425864599ce6cf63185e8b34b7bb4ae00f5be4519c246559ae2c1c43552fa3b8c86cd96b550f481137a8454f422defdcb8369fb76c05beb8d95c942405f363fe02f36045a4e1000000"
+      "1f8b0800000000000003458ec10a824014457f25de5a62cc5ae8aed420820a511022627c4e34603332f35c88f85bfd403fd6d8c22e7771b9bc7b78039026de1c48bc2c44be07faf1b08220621e34f2255df25de488ba53e44eae03c88a2b8820497dc69cff0a8360051e60678c50b4e30d57281c60cdd832dccc94bc6f5d0b719165e929bf6fe3f85c9c7237ac24feb8459ea4fb7d5996330cfb58d7d3282d3257b646d71d52222c1ad992d4d33f1761ece7ad1a894f611747ad48c3781bbf4bed0a78e2000000"
     ],
     "rawHeaders": [
       "Date",
@@ -42,13 +42,13 @@
       "Content-Encoding",
       "gzip",
       "DB-Nickname",
-      "VTJGc2RHVmtYMStKdE04N0xxUnprc1FtdnFiclNtcHJKNlVpb1JyYnVTOD0=",
+      "VTJGc2RHVmtYMS9nYmJnSUxyNmdic2VFc05DRHUvSWs5UlJPRjZHa2psZz0=",
       "X-DB-NAR",
       "101235-1",
       "Content-Security-Policy",
       "frame-ancestors https://*.simulator-api.db.com",
       "Content-Length",
-      "198",
+      "199",
       "Connection",
       "close"
     ],

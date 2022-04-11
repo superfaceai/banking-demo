@@ -1,0 +1,52 @@
+profile = "banking/get-account-balance@1.0"
+provider = "unverified-norisbank-simulator"
+
+"""
+GetAccountBalance map
+"""
+map GetAccountBalance {
+    http GET "/banking/cashAccounts/v2" {
+        request "application/json" {
+            query {
+                iban = input.iban
+                currencyCode = input.currencyCode
+                accountTypeFilter = input.accountTypeFilter
+            }
+
+            headers {
+                "Authorization" = `Bearer ${parameters.accessToken}`
+            }
+        }
+
+        response 200 "application/json" {
+            map result {
+                accounts = call MapAccounts(body = body)
+            }
+        }
+
+        response 401 "application/json" {
+            map error {
+                title = "Unauthorized"
+                description = body.message
+            }
+        }
+    }
+}
+
+"""
+Operation MapAccounts
+Returns array mapping accounts in received body
+"""
+operation MapAccounts {
+    accounts = args.body.accounts.map((account) => {
+        return {
+            iban: account.iban,
+            currentBalance: account.currentBalance,
+            accountType: account.accountType.replace('_ACCOUNT', ''),
+            bic: account.bic,
+            currencyCode: account.currencyCode,
+            description: account.productDescription
+        }
+    });
+    return accounts
+}
