@@ -1,4 +1,4 @@
-profile = "get-account-balance@1.0"
+profile = "banking/get-account-balance@1.0"
 provider = "mock"
 
 map GetAccountBalance {
@@ -10,7 +10,7 @@ map GetAccountBalance {
                 accountType: 'CURRENT_ACCOUNT',
                 bic: 'DEUTDEFFXXX',
                 currencyCode: 'EUR',
-                productDescription: 'Persönliches Konto'
+                description: 'Persönliches Konto'
             }
         ]
     }
