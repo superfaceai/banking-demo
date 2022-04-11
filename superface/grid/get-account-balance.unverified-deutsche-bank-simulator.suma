@@ -1,5 +1,5 @@
 profile = "get-account-balance@1.0"
-provider = "db-simulator"
+provider = "unverified-deutsche-bank-simulator"
 
 """
 GetAccountBalance map

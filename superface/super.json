@@ -1,7 +1,7 @@
 {
   "providers": {
-    "db-simulator": {
-      "file": "./grid/db-simulator.provider.json",
+    "unverified-deutsche-bank-simulator": {
+      "file": "./grid/unverified-deutsche-bank-simulator.provider.json",
       "security": [
         {
           "id": "bearer_token",
@@ -20,8 +20,8 @@
     "banking/get-account-balance": {
       "file": "./grid/get-account-balance.supr",
       "providers": {
-        "db-simulator": {
-          "file": "./grid/get-account-balance.db-simulator.suma"
+        "unverified-deutsche-bank-simulator": {
+          "file": "./grid/get-account-balance.unverified-deutsche-bank-simulator.suma"
         },
         "mock": {
           "file": "./grid/get-account-balance.mock.suma"
