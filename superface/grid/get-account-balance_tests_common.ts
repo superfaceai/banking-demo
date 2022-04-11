@@ -1,18 +1,28 @@
-import 'dotenv/config';
+import "dotenv/config";
 import { SuperfaceClient } from "@superfaceai/one-sdk";
+import { SuperfaceTest } from "@superfaceai/testing";
 
-export function getAccountBalanceTest(providerName: string) {
-    describe(`banking/get-account-balance/${providerName}`, () => {
-        it('returns a result when called with ...', async () => {
-            const sdk = new SuperfaceClient();
-            const profile = await sdk.getProfile('banking/get-account-balance');
-            const provider = await sdk.getProvider(providerName);
+export function getAccountBalanceTest(provider: string) {
+  describe(`chat/channels/${provider}`, () => {
+    let superface: SuperfaceTest;
 
-            const result = await profile
-                .getUseCase('GetAccountBalance')
-                .perform(undefined, { provider });
-
-            expect(result.isOk()).toBe(true);
+    describe("GetAccountBalance", () => {
+      beforeAll(() => {
+        superface = new SuperfaceTest({
+          profile: "banking/get-account-balance",
+          provider,
+          useCase: "GetAccountBalance",
+          testInstance: expect,
         });
+      });
+
+      it("performs correctly", async () => {
+        await expect(
+          superface.run({
+            input: undefined,
+          })
+        ).resolves.toMatchSnapshot();
+      });
     });
+  });
 }
